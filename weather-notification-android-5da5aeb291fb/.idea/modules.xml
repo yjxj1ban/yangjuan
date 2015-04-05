@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/skins/big-text/big-text.iml" filepath="$PROJECT_DIR$/skins/big-text/big-text.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skins/bigger-text/bigger-text.iml" filepath="$PROJECT_DIR$/skins/bigger-text/bigger-text.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skins/black-text/black-text.iml" filepath="$PROJECT_DIR$/skins/black-text/black-text.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skins/black-text-plus/black-text-plus.iml" filepath="$PROJECT_DIR$/skins/black-text-plus/black-text-plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/libpreference/libpreference.iml" filepath="$PROJECT_DIR$/libs/libpreference/libpreference.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/libweather/libweather.iml" filepath="$PROJECT_DIR$/libs/libweather/libweather.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/libweatherskin/libweatherskin.iml" filepath="$PROJECT_DIR$/libs/libweatherskin/libweatherskin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests/tests.iml" filepath="$PROJECT_DIR$/tests/tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skins/v11/v11.iml" filepath="$PROJECT_DIR$/skins/v11/v11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skins/white-text/white-text.iml" filepath="$PROJECT_DIR$/skins/white-text/white-text.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skins/white-text-plus/white-text-plus.iml" filepath="$PROJECT_DIR$/skins/white-text-plus/white-text-plus.iml" />
+    </modules>
+  </component>
+</project>
+

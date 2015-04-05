@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+  - "3.2"
+  - "3.3"
+install:
+  - pip install coveralls
+script:
+  - python setup.py install
+  - python setup.py test -s tests.unit
+  - coverage run --rcfile=.coveragerc setup.py test -s tests.unit
+after_success:
+  coveralls
+notifications:
+  email:
+    on_failure: change

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+#   Android Weather Notification.
+#   Copyright (C) 2010  Denis Nelubin aka Gelin
+#   
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#   
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#   
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#   
+#   http://gelin.ru
+#   mailto:den@gelin.ru
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/weather_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- android:padding="10sp" -->
+    
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp">
+    
+        <TextView
+                android:id="@+id/location"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toRightOf="@+id/close_button"
+                style="@style/WeatherInfo.Location"
+                android:text="Here"/>
+
+        <TextView
+                android:id="@+id/update_time"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/location"
+                android:layout_toRightOf="@+id/close_button"
+                style="@style/WeatherInfo.UpdateTime"
+                android:text="updated"/>
+
+        <ImageView android:id="@+id/close_button"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                style="@style/WeatherInfo.CloseButton"/>
+    
+    </RelativeLayout>
+    
+    <RelativeLayout
+            android:id="@+id/current_condition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        <ImageView
+                android:id="@+id/condition_icon"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="5dp"
+                style="@style/WeatherInfo.ConditionIcon"
+                android:src="@drawable/condition_clear_48"/>
+        
+        <TextView
+                android:id="@+id/condition"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/condition_icon"
+                android:layout_toLeftOf="@+id/temp"
+                style="@style/WeatherInfo.Condition"
+                android:text="Weather condition Weather condition Weather condition"/>
+                
+        <TextView
+                android:id="@+id/wind"
+                android:layout_below="@+id/condition"
+                android:layout_toRightOf="@+id/condition_icon"
+                android:layout_toLeftOf="@+id/temp"
+                style="@style/WeatherInfo.ConditionDetails"
+                android:text="Wind Wind Wind Wind Wind Wind"/>
+                
+        <TextView
+                android:id="@+id/humidity"
+                android:layout_below="@+id/wind"
+                android:layout_toRightOf="@+id/condition_icon"
+                android:layout_toLeftOf="@+id/temp"
+                style="@style/WeatherInfo.ConditionDetails"
+                android:text="Humidity Humidity Humidity Humidity"/>
+
+        <RelativeLayout
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp">
+
+                <TextView
+                        android:id="@+id/current_temp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        style="@style/WeatherInfo.CurrentTemp"
+                        android:text="X&#x00B0;"/>
+                    
+                <TextView
+                        android:id="@+id/current_temp_alt"
+                        android:layout_below="@+id/current_temp"
+                        android:layout_centerHorizontal="true"
+                        style="@style/WeatherInfo.AltTemp"
+                        android:text="X&#x00B0;"/>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/current_temp_alt"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal">
+                
+                    <TextView
+                            android:id="@+id/high_temp"
+                            style="@style/WeatherInfo.Text"
+                            android:text="X&#x00B0;"/>
+
+                    <TextView
+                            android:id="@+id/high_low_temp_separator"
+                            style="@style/WeatherInfo.Text"
+                            android:text="/"/>
+
+                    <TextView
+                            android:id="@+id/low_temp"
+                            style="@style/WeatherInfo.Text"
+                            android:text="X&#x00B0;"/>
+
+                </LinearLayout>
+                        
+            </RelativeLayout>
+
+    </RelativeLayout>
+    
+    <TableLayout
+            android:id="@+id/forecasts"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        <TableRow
+                android:id="@+id/forecast_1"
+                style="@style/WeatherInfo.ForecastRow">
+
+            <TextView
+                    android:id="@+id/forecast_day_1"
+                    style="@style/WeatherInfo.Text"
+                    android:text="Day"/>
+
+            <ImageView
+                    android:id="@+id/forecast_condition_icon_1"
+                    style="@style/WeatherInfo.ForecastConditionIcon"
+                    android:src="@drawable/condition_clear_16"/>
+
+            <TextView
+                    android:id="@+id/forecast_condition_1"
+                    style="@style/WeatherInfo.ForecastCondition"
+                    android:text="Weather condition Weather condition Weather condition"/>
+
+            <TextView
+                    android:id="@+id/forecast_high_temp_1"
+                    android:gravity="right"
+                    style="@style/WeatherInfo.Text"
+                    android:text="X&#x00B0;"/>
+
+            <TextView
+                    style="@style/WeatherInfo.Text"
+                    android:text="/"/>
+
+            <TextView
+                    android:id="@+id/forecast_low_temp_1"
+                    style="@style/WeatherInfo.Text"
+                    android:text="X&#x00B0;"/>
+                
+        </TableRow>
+        
+        <TableRow
+                android:id="@+id/forecast_2"
+                style="@style/WeatherInfo.ForecastRow">
+
+            <TextView
+                    android:id="@+id/forecast_day_2"
+                    style="@style/WeatherInfo.Text"
+                    android:text="Day"/>
+
+            <ImageView
+                    android:id="@+id/forecast_condition_icon_2"
+                    style="@style/WeatherInfo.ForecastConditionIcon"
+                    android:src="@drawable/condition_clear_16"/>
+
+            <TextView
+                    android:id="@+id/forecast_condition_2"
+                    style="@style/WeatherInfo.ForecastCondition"
+                    android:text="Weather condition Weather condition Weather condition"/>
+
+            <TextView
+                    android:id="@+id/forecast_high_temp_2"
+                    android:gravity="right"
+                    style="@style/WeatherInfo.Text"
+                    android:text="X&#x00B0;"/>
+
+            <TextView
+                    style="@style/WeatherInfo.Text"
+                    android:text="/"/>
+
+            <TextView
+                    android:id="@+id/forecast_low_temp_2"
+                    style="@style/WeatherInfo.Text"
+                    android:text="X&#x00B0;"/>
+                
+        </TableRow>
+        
+        <TableRow
+                android:id="@+id/forecast_3"
+                style="@style/WeatherInfo.ForecastRow">
+
+            <TextView
+                    android:id="@+id/forecast_day_3"
+                    style="@style/WeatherInfo.Text"
+                    android:text="Day"/>
+
+            <ImageView
+                    android:id="@+id/forecast_condition_icon_3"
+                    style="@style/WeatherInfo.ForecastConditionIcon"
+                    android:src="@drawable/condition_clear_16"/>
+
+            <TextView
+                    android:id="@+id/forecast_condition_3"
+                    style="@style/WeatherInfo.ForecastCondition"
+                    android:text="Weather condition Weather condition Weather condition"/>
+
+            <TextView
+                    android:id="@+id/forecast_high_temp_3"
+                    android:gravity="right"
+                    style="@style/WeatherInfo.Text"
+                    android:text="X&#x00B0;"/>
+
+            <TextView
+                    style="@style/WeatherInfo.Text"
+                    android:text="/"/>
+
+            <TextView
+                    android:id="@+id/forecast_low_temp_3"
+                    style="@style/WeatherInfo.Text"
+                    android:text="X&#x00B0;"/>
+            
+        </TableRow>
+    
+    </TableLayout>
+
+    <TextView
+            android:id="@+id/forecast_url"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right|center_vertical"
+            android:visibility="invisible"
+            android:text="http://openweathermap.org"/>
+    
+    <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+    
+        <ImageButton
+                android:id="@+id/refresh_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_menu_rotate"
+                android:scaleType="center"/>
+            
+        <ImageButton
+                android:id="@+id/preferences_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_menu_preferences"
+                android:scaleType="center"/>
+            
+    </LinearLayout>
+    
+</LinearLayout>
